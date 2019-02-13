@@ -6,6 +6,33 @@ html {
   font-family: var(--font-face, sans-serif);
 }
 
+header h1 {
+  text-align: center;
+}
+
+#generated-password {
+  background-color: transparent;
+  border: 1px solid #bbb;
+  text-align: center;
+  padding: 10px;
+  width: 500px;
+  font-size: 1.125rem;
+  font-weight: 100;
+  margin: 0 auto;
+  display: block;
+  border-radius: 30px;
+}
+
+#password-gen-form {
+  text-align: center;
+}
+
+#password-length {
+  font-size: 1.125em;
+  padding: 10px;
+  border-radius: 30px;
+}
+
 footer p {
   position: fixed;
   bottom: 0;
