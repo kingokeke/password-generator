@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="main.js"></script>
+  </head>
+  <body>
+    <div id="site-container">
+      <div id="site-content">
+        <header>
+          <h1>Random Password Generator</h1>
+        </header>
+        <main>
+          <form id="password-gen-form" action="">
+            <input type="text" disabled id="generated-password" />
+            <br />
+            <br />
+            <select name="password-length" id="password-length" required></select>
+            <br />
+            <br />
+            <button id="generate-button">Generate</button>
+            <button type="reset">Reset</button>
+          </form>
+        </main>
+        <footer>
+          <p>
+            Copyright &copy;
+            <span id="copyright-year"></span>
+            <a href="https://www.github.com/kingokeke" target="_blank">Kingsley Okeke.</a>
+            All rights reserved.
+          </p>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
