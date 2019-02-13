@@ -1,0 +1,29 @@
+:root {
+  --font-face: sans-serif;
+}
+
+html {
+  font-family: var(--font-face, sans-serif);
+}
+
+footer p {
+  position: fixed;
+  bottom: 0;
+  margin: 0;
+  font-size: 12px;
+  text-align: center;
+  display: block;
+  background-color: #ccc;
+  width: 100%;
+  left: 0;
+  font-weight: bold;
+  padding: 3px;
+}
+
+footer p a,
+footer p a:hover,
+footer p a:active,
+footer p a:visited {
+  text-decoration: none;
+  color: #00c;
+}
