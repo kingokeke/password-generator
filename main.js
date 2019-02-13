@@ -7,10 +7,10 @@ const copyrightYear = document.querySelector('#copyright-year');
 const passwordLength = document.querySelector('#password-length');
 const generateButton = document.querySelector('#generate-button');
 const passwordOutput = document.querySelector('#generated-password');
-const passwordGenForm = document.querySelector('#password-gen-form');
 const numberArray = populateArraysFromASCII('Numbers');
 const uppercaseArray = populateArraysFromASCII('Uppercase');
 const lowercaseArray = populateArraysFromASCII('Lowercase');
+const symbolsArray = populateArraysFromASCII('Symbols');
 
 /* ------------------------------------------------------------------------- */
 //
@@ -51,11 +51,20 @@ function populateArraysFromASCII(source) {
     uppercase: { min: 65, max: 90 },
     lowercase: { min: 97, max: 122 },
     numbers: { min: 48, max: 57 },
+    symbols: [{ min: 33, max: 47 }, { min: 58, max: 64 }, { min: 91, max: 96 }, { min: 123, max: 126 }],
   };
 
   if (chars.hasOwnProperty(source)) {
-    for (let i = chars[source]['min']; i <= chars[source]['max']; i++) {
-      array.push(String.fromCharCode(i));
+    if (source === 'symbols') {
+      chars[source].forEach(item => {
+        for (let i = item['min']; i <= item['max']; i++) {
+          array.push(String.fromCharCode(i));
+        }
+      });
+    } else {
+      for (let i = chars[source]['min']; i <= chars[source]['max']; i++) {
+        array.push(String.fromCharCode(i));
+      }
     }
   }
   return array;
@@ -65,7 +74,7 @@ function generatePassword(event) {
   event.preventDefault();
   const length = passwordLength.value;
   let password = '';
-  const characterSelection = [...numberArray, ...uppercaseArray, ...lowercaseArray];
+  const characterSelection = [...numberArray, ...uppercaseArray, ...lowercaseArray, ...symbolsArray];
   for (let i = 0; i < length; i++) {
     password += characterSelection[getRandomInteger(0, characterSelection.length)];
   }
