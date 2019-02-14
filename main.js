@@ -95,10 +95,10 @@ function generatePassword(event) {
   const length = passwordLength.value;
   const characterSelection = [...numberArray, ...uppercaseArray, ...lowercaseArray, ...symbolsArray];
 
-  // Generate the password from random characters in the characterSelection array;
+  // Generate the password from random characters in the characterSelection array. No repeated characters.
   while (password.length < length) {
     let randomCharacter = characterSelection[getRandomInteger(0, characterSelection.length)];
-    if (randomCharacter === password[password.length - 1] && password.length !== 0) {
+    if ([...password].includes(randomCharacter)) {
       continue;
     } else {
       password += randomCharacter;
@@ -121,7 +121,7 @@ setThisYear(copyrightYear);
 
 //
 // Populate length of password dropdown list
-populateSelect(passwordLength, 4, 40);
+populateSelect(passwordLength, 4, 36);
 
 //
 // Generate a new random password whenever the button is clicked
