@@ -1,4 +1,4 @@
-# password-generator
+# Password Generator
 
 This is a project that I thought I'd try my hands on. 
 My implementation uses characters generated from their
